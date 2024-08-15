@@ -1,0 +1,25 @@
+.cardContainer {
+  background-color: #051923;
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  margin-top: 20%;
+}
+
+.cardContainer:hover {
+  cursor: pointer;
+  background-color: #051920;
+}
+
+.text {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  padding-left: 10px;
+}
+
+.image {
+  width: 30px;
+  height: 30px;
+  padding: 10px 0px 0px 10px;
+}
