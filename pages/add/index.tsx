@@ -5,9 +5,17 @@ import Images from "@/assets/images/images";
 import Header from "@/components/Header";
 import Card from "@/components/Card";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
-const index = () => {
-  return (
+const Index = () => {
+
+  const router = useRouter();
+
+  const navigate = (navigateTo : string) => {
+    router.push(navigateTo);
+  }
+
+    return (
     <div className={styles.container}>
       <Header img={Images.LeftArrow()} title="Add" style={styles.header} />
       <div className={styles.addContainer}>
@@ -48,7 +56,7 @@ const index = () => {
       <div className={styles.latestEntriesContainer}>
         <div className={styles.titleContainer}>
             <h5 className={styles.title}>Latest Entries</h5>
-            <Image src={Images.More()} alt="Unable to load this image" className={styles.img} />
+            <Image src={Images.More()} alt="Unable to load this image" className={styles.img} onClick={() => navigate("history")}/>
         </div>
       </div>
 
@@ -57,4 +65,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

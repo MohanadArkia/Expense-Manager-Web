@@ -5,8 +5,16 @@ import Images from "@/assets/images/images";
 import Header from "@/components/Header";
 import Image from "next/image";
 import BottomNavigator from "@/components/BottomNavigator";
+import { useRouter } from "next/router";
 
-const index = () => {
+const Index = () => {
+
+    const router = useRouter();
+
+  const navigate = (navigateTo : string) => {
+    router.push(navigateTo);
+  }
+
   return (
     <div className={styles.container}>
       <Header
@@ -51,6 +59,7 @@ const index = () => {
             className={styles.img}
             src={Images.More()}
             alt="Unable to load this image"
+            onClick={() => navigate("history")}
           />
         </div>
       </div>
@@ -59,4 +68,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

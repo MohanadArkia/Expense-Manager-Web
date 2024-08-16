@@ -1,11 +1,12 @@
 .container {
-    background-color: #051923;
-    width: 100vw;
-    height: 100vh;
+  background-color: #212529;
+  width: 100vw;
+  height: 100vh;
 }
 
-.header { 
-    height: 62px;
-    flex-direction: row-reverse;
-    align-items: center;
+.header {
+  background-color: #051923;
+  height: 62px;
+  flex-direction: row-reverse;
+  align-items: center;
 }

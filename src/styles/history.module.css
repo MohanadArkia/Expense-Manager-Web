@@ -1,0 +1,16 @@
+.container {
+  background-color: #212529;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+    flex-direction: row-reverse;
+    background-color: #051923;
+    height: 62px;
+    align-items: center;
+}
+
+.img:hover {
+ cursor: pointer; 
+}
