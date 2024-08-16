@@ -11,8 +11,7 @@
 }
 
 .thirdContainer {
-  width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 232px);
   background-color: #051923;
   margin-top: 50px;
   border-top-right-radius: 25px;
@@ -21,21 +20,20 @@
 
 .title {
   color: #ffffff;
-  font-size: 15px;
-  padding: 0px 0px 0px 100px;
+  font-size: 13px;
+  margin-left: 10px;
 }
 
 .forthContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 30px;
 }
 
 .img {
-  margin-right: 50px;
   width: 40px;
   height: 40px;
+  margin: 10px 10px 0px 0px;
 }
 
 .img:hover {
@@ -53,4 +51,33 @@
   color: #ffffff;
   align-self: center;
   margin-left: 10px;
+}
+
+.card {
+  display: flex;
+  background-color: #051923;
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  margin-top: 20%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cardImg {
+  align-self: flex-start;
+  margin-left: 10px;
+}
+
+.priceTxt {
+  color: #ffffff;
+  align-self: flex-start;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.latestTitle {
+  color: #ffffff;
+  font-size: 18px;
+  margin: 10px 0px 0px 10px;
 }

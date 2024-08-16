@@ -1,21 +1,19 @@
-import React from 'react'
-import styles from "../styles/card.module.css";
-import Image from 'next/image';
-import { CardProps } from '../../types/card.types';
+import React from "react";
+import Image from "next/image";
+import { CardProps } from "../../types/card.types";
 
-const Card = (props : CardProps) => {
-
-  const {img, title, price} = props;
+const Card = (props: CardProps) => {
+  const { img, title, price, style, textStyle, imgStyle, titleStyle, onClick } = props;
 
   return (
-    <div className={styles.container}>
-        <div className={styles.cardContainer}>
-            <Image className={styles.image} src={img} alt="Image not found"/>
-            <h5 className={styles.text}>{title}</h5>
-            <h5 className={styles.text}>${price}</h5>
-        </div>
+    <div onClick={onClick}>
+      <div className={style}>
+        <Image className={imgStyle} src={img} alt="Image not found" />
+        <h5 className={titleStyle}>{title}</h5>
+        {price !== undefined && <h5 className={textStyle}>${price}</h5>}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
