@@ -3,9 +3,9 @@ import styles from "../../src/styles/addReminder.module.css";
 import Header from '@/components/Header';
 import Images from '@/assets/images/images';
 import { useRouter } from 'next/router';
-import Calendar from 'react-calendar';
 import TextInput from '@/components/TextInput';
 import Button from '@/components/Button';
+import DropDown from '@/components/DropDown';
 
 const Index = () => {
 
@@ -27,8 +27,8 @@ const Index = () => {
                <h5 className={styles.title}>Amount</h5>
                <TextInput img={Images.dollar()} imgStyle={styles.img} style={styles.txtInput} />
 
-               <h5 className={styles.title}>Frequency ; DropMenu</h5>
-               <TextInput img={Images.hamburgerMenu()} imgStyle={styles.img} style={styles.txtInput} />
+               <h5 className={styles.title}>Frequency</h5>
+               <DropDown />
 
                <h5 className={styles.title}>Date</h5>
                <TextInput img={Images.Calendar()} imgStyle={styles.img} style={styles.txtInput} />
