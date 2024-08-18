@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 
 const Index = () => {
 
-    const router = useRouter();
+  const router = useRouter();
 
   const navigate = (navigateTo : string) => {
     router.push(navigateTo);

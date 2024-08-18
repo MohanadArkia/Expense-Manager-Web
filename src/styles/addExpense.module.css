@@ -1,0 +1,77 @@
+.container {
+  background-color: #212529;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 62px;
+  background-color: #051923;
+}
+
+.calendarContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar {
+  width: 30vw;
+  border: 1px solid #aaa;
+  margin-top: 30px;
+}
+
+.calendarColors {
+  color: #ffffff;
+  background-color: #051923;
+}
+
+.txtInputsContainer {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.title {
+  color: #ffffff;
+}
+
+.txtInput {
+  border-radius: 10px;
+  background-color: #051923;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  width: 400px;
+  height: 30px;
+  margin-bottom: 5%;
+  padding-left: 10px;
+}
+
+.img {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  right: 2px;
+}
+
+.btn {
+  text-align: center;
+  width: 400px;
+  height: 35px;
+  background-color: #2346fa;
+  color: #ffffff;
+  border-radius: 35px;
+  border: 1px solid #ffffff;
+  margin-top: 5vh;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btnTxt {
+  font-size: 25px;
+  align-self: center;
+}

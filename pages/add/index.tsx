@@ -11,8 +11,8 @@ const Index = () => {
 
   const router = useRouter();
 
-  const navigate = (navigateTo : string) => {
-    router.push(navigateTo);
+  const navigate = (route : string) => {
+    router.push(route);
   }
 
     return (
@@ -25,7 +25,7 @@ const Index = () => {
           style={styles.card}
           titleStyle={styles.headerTitle}
           imgStyle={styles.cardImg}
-          onClick={() => console.log("Go To Income Screen")}
+          onClick={() => navigate("addIncome")}
         />
         <Card
           title="Add Expense"
@@ -33,7 +33,7 @@ const Index = () => {
           style={styles.card}
           titleStyle={styles.headerTitle}
           imgStyle={styles.cardImg}
-          onClick={() => console.log("Go To Expense Screen")}
+          onClick={() => navigate("addExpense")}
         />
         <Card
           title="Add Reminder"
@@ -41,7 +41,7 @@ const Index = () => {
           style={styles.card}
           titleStyle={styles.headerTitle}
           imgStyle={styles.cardImg}
-          onClick={() => console.log("Go To Reminder Screen")}
+          onClick={() => navigate("addReminder")}
         />
         <Card
           title="Add Goal"
@@ -49,7 +49,7 @@ const Index = () => {
           style={styles.card}
           titleStyle={styles.headerTitle}
           imgStyle={styles.cardImg}
-          onClick={() => console.log("Go To Goal Screen")}
+          onClick={() => navigate("addGoal")}
         />
       </div>
 
