@@ -3,10 +3,10 @@ import Image from "next/image";
 import { CardProps } from "../../types/card.types";
 
 const Card = (props: CardProps) => {
-  const { img, title, price, style, textStyle, imgStyle, titleStyle, onClick } = props;
+  const { img, title, price, style, textStyle, imgStyle, titleStyle, onClick, hover } = props;
 
   return (
-    <div onClick={onClick}>
+    <div onClick={onClick} className={hover}>
       <div className={style}>
         <Image className={imgStyle} src={img} alt="Image not found" />
         <h5 className={titleStyle}>{title}</h5>

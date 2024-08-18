@@ -7,6 +7,7 @@ export type CardProps = {
     imgStyle?: string;
     titleStyle?: string;
     onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+    hover?: string;
 };
 
 // React.CSSProperties;

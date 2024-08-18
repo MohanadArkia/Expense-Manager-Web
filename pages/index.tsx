@@ -49,6 +49,8 @@ const Index = () => {
           titleStyle={styles.title}
           textStyle={styles.priceTxt}
           imgStyle={styles.cardImg}
+          hover={styles.monthlyHover}
+          onClick={() => navigate("monthlyExpense")}
         />
       </div>
 
