@@ -10,8 +10,8 @@ const Index = () => {
 
     const navigate = useRouter();
 
-    const goToRegister = () => {
-        navigate.push("register");
+    const goToRegister = (route : string) => {
+        navigate.push(route);
     };
   return (
     <div className={styles.container}>
@@ -21,11 +21,9 @@ const Index = () => {
             <TextInput style={styles.txtInput} placeHolder='Username' img={Images.Person()} imgStyle={styles.icon} />
             <TextInput style={styles.txtInput} placeHolder='Password' img={Images.Lock()} imgStyle={styles.icon} type='password'/>
             <Button title="Login" style={styles.btnLogin} buttonTextStyle={styles.btnLoginText} />
-            <h5 className={styles.forgotPass}>Forgot Password?</h5>
+            <h5 onClick={() => goToRegister("forgotPassword")} className={styles.forgotPass}>Forgot Password?</h5>
             <Button title="Continue with Google" style={styles.btnGoogle} buttonTextStyle={styles.btnGoogleText} img={Images.Google()} />
-            <div onClick={goToRegister}>
-                <h6 className={styles.registerText}>Don&apos;t have an account? <span className={styles.registerSpanText}>Register here</span></h6>
-            </div>
+            <h6 onClick={() => goToRegister("register")} className={styles.registerText}>Don&apos;t have an account? <span className={styles.registerSpanText}>Register here</span></h6>
         </div>
     </div>
   )

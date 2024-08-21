@@ -9,6 +9,7 @@
 
 .text {
   color: #ffffff;
+  margin-bottom: 30px;
 }
 
 .secondaryContainer {
@@ -36,11 +37,14 @@
 }
 
 .btnLogin {
+  display: flex;
   background-color: #003554;
   width: 335px;
   height: 44px;
   border-radius: 35px;
   border: 1px solid #ffffff;
+  justify-content: center;
+  align-items: center;
 }
 
 .btnLogin:hover {
@@ -51,7 +55,7 @@
   color: #ffffff;
   font-size: 25px;
   letter-spacing: 2px;
-  text-align: center;
+  margin: 0px;
 }
 
 .forgotPass {
