@@ -25,13 +25,13 @@ const Index = () => {
                <TextInput img={Images.pencil()} style={styles.txtInput} imgStyle={styles.img}/>
 
                <h5 className={styles.title}>Amount</h5>
-               <TextInput img={Images.dollar()} imgStyle={styles.img} style={styles.txtInput} />
+               <TextInput img={Images.dollar()} imgStyle={styles.img} style={styles.txtInput} type='number' />
 
                <h5 className={styles.title}>Contribution Type</h5>
                <DropDown />
 
                <h5 className={styles.title}>Dead Line</h5>
-               <TextInput img={Images.Calendar()} imgStyle={styles.img} style={styles.txtInput} />
+               <TextInput img={Images.Calendar()} imgStyle={styles.img} style={styles.txtInput} readOnly={true}/>
 
                <Button title="Add Goal" style={styles.btn} buttonTextStyle={styles.btnTxt} />
            </div> 

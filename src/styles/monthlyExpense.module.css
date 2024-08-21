@@ -1,23 +1,23 @@
 .container {
-    background-color: #212529;
-    width: 100vw;
-    height: 100vh;
+  background-color: #212529;
+  width: 100vw;
+  height: 100vh;
 }
 
 .header {
-    display: flex;
-    flex-direction: row-reverse;
-    height: 62px;
-    background-color: #051923;
-    align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 62px;
+  background-color: #051923;
+  align-items: center;
 }
 
 .secondaryContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color: #212529;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #212529;
 }
 
 .txtInput {
@@ -29,8 +29,8 @@
 }
 
 .text {
-    color: #ffffff;
-    font-size: 20px;
+  color: #ffffff;
+  font-size: 30px;
 }
 
 .btn {
@@ -44,7 +44,7 @@
 }
 
 .btn:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .img {

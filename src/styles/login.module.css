@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  background-image: linear-gradient(#051923, #00a6fb);
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  color: #ffffff;
+}
+
+.secondaryContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.txtInput {
+  background-color: #212529;
+  border-radius: 10px;
+  width: 335px;
+  height: 40px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding-left: 35px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  position: absolute;
+  left: 2px;
+  top: 4px;
+}
+
+.btnLogin {
+  background-color: #003554;
+  width: 335px;
+  height: 44px;
+  border-radius: 35px;
+  border: 1px solid #ffffff;
+}
+
+.btnLogin:hover {
+  cursor: pointer;
+}
+
+.btnLoginText {
+  color: #ffffff;
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.forgotPass {
+  color: #ffffff;
+  margin: 20px 0px 20px 0px;
+}
+
+.forgotPass:hover {
+  cursor: pointer;
+}
+
+.btnGoogle {
+  display: flex;
+  background-color: #051923;
+  width: 335px;
+  height: 44px;
+  border-radius: 35px;
+  border: 1px solid #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnGoogleText {
+  color: #ffffff;
+  letter-spacing: 2px;
+  font-size: 20px;
+  margin: 0px;
+}
+
+.btnGoogle:hover {
+  cursor: pointer;
+}

@@ -19,7 +19,7 @@ const Index = () => {
         <Header title="Monthly Expense" img={Images.LeftArrow()} style={styles.header} onClick={() => goBack()}/>
         <div className={styles.secondaryContainer}>
             <div>
-                <p className={styles.text}>Amount</p>
+                <h5 className={styles.text}>Amount</h5>
                 <TextInput style={styles.txtInput} img={Images.dollar()} imgStyle={styles.img} />
                 <Button title="Add Monthly Expense" style={styles.btn} />
             </div>

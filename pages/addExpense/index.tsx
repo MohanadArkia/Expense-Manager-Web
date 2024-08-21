@@ -31,7 +31,7 @@ const Index = () => {
                <TextInput img={Images.pencil()} style={styles.txtInput} imgStyle={styles.img}/>
 
                <h5 className={styles.title}>Expense Amount</h5>
-               <TextInput img={Images.dollar()} imgStyle={styles.img} style={styles.txtInput} />
+               <TextInput img={Images.dollar()} imgStyle={styles.img} style={styles.txtInput} type='number'/>
 
                <Button title="Add Expense" style={styles.btn} buttonTextStyle={styles.btnTxt} />
            </div> 
