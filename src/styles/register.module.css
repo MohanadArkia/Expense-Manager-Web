@@ -1,0 +1,97 @@
+.container {
+    display: flex;
+    background-image: linear-gradient(#051923, #00A6FB); 
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.secondaryContainer {
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.txtInput {
+  background-color: #212529;
+  border-radius: 10px;
+  width: 335px;
+  height: 40px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.secondImg {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.secondImg:hover {
+    cursor: pointer;
+}
+
+.btnSignUp {
+    display: flex;
+    background-color: #003554;
+    width: 335px;
+    height: 44px;
+    border: 1px solid #ffffff;
+    border-radius: 35px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnSignUp:hover {
+    cursor: pointer;
+}
+
+.btnSignUpText {
+    color: #ffffff;
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin: 0px;
+}
+
+.text {
+    color: #ffffff;
+    margin: 20px 0px 20px 0px;
+}
+
+.btnGoogle {
+    display: flex;
+    background-color: #051923;
+    width: 151px;
+    height: 44px;
+    border: 1px solid #ffffff;
+    border-radius: 35px;
+    justify-content: space-around;
+    align-items: center;
+    /* padding-right: 20px; */
+}
+
+.btnGoogle:hover {
+    cursor: pointer;
+}
+
+.btnGoogleText {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin: 0px;
+}

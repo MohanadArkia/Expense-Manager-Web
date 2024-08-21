@@ -84,3 +84,16 @@
 .btnGoogle:hover {
   cursor: pointer;
 }
+
+.registerText {
+  color: #ffffff;
+  margin-top: 30px;
+}
+
+.registerText:hover {
+  cursor: pointer;
+}
+
+.registerSpanText {
+  color: #051923;
+}

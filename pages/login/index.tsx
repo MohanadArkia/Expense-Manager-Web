@@ -4,8 +4,15 @@ import Image from 'next/image';
 import Images from '@/assets/images/images';
 import TextInput from '@/components/TextInput';
 import Button from '@/components/Button';
+import { useRouter } from 'next/router';
 
-const index = () => {
+const Index = () => {
+
+    const navigate = useRouter();
+
+    const goToRegister = () => {
+        navigate.push("register");
+    };
   return (
     <div className={styles.container}>
         <div className={styles.secondaryContainer}>
@@ -14,11 +21,14 @@ const index = () => {
             <TextInput style={styles.txtInput} placeHolder='Username' img={Images.Person()} imgStyle={styles.icon} />
             <TextInput style={styles.txtInput} placeHolder='Password' img={Images.Lock()} imgStyle={styles.icon} type='password'/>
             <Button title="Login" style={styles.btnLogin} buttonTextStyle={styles.btnLoginText} />
-            <h6 className={styles.forgotPass}>Forgot Password?</h6>
+            <h5 className={styles.forgotPass}>Forgot Password?</h5>
             <Button title="Continue with Google" style={styles.btnGoogle} buttonTextStyle={styles.btnGoogleText} img={Images.Google()} />
+            <div onClick={goToRegister}>
+                <h6 className={styles.registerText}>Don&apos;t have an account? <span className={styles.registerSpanText}>Register here</span></h6>
+            </div>
         </div>
     </div>
   )
 }
 
-export default index
+export default Index;

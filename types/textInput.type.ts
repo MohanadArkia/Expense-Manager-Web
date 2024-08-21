@@ -5,4 +5,6 @@ export type textInput = {
     readOnly?: boolean;
     type?: string;
     placeHolder?: string;
+    secondImg?: string;
+    secondImgStyle?: string;
 };
