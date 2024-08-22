@@ -41,7 +41,6 @@ const BottomNavigator = () => {
           role="button"
           aria-label="Add"
           tabIndex={0}
-
         />
         <Image
           className={style.img}

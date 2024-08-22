@@ -1,24 +1,28 @@
-import React from 'react'
+import React from "react";
 import styles from "../../src/styles/reminders.module.css";
-import Header from '@/components/Header';
-import Images from '@/assets/images/images';
-import BottomNavigator from '@/components/BottomNavigator';
-import { useRouter } from 'next/router';
+import Header from "@/components/Header";
+import Images from "@/assets/images/images";
+import BottomNavigator from "@/components/BottomNavigator";
+import { useRouter } from "next/router";
 
 const Index = () => {
-  
   const router = useRouter();
 
   const goBack = () => {
-      router.back();
+    router.back();
   };
 
   return (
     <div className={styles.container}>
-        <Header title="Reminders" img={Images.LeftArrow()} style={styles.header} onClick={() => goBack()}/>
-        <BottomNavigator />
+      <Header
+        title="Reminders"
+        img={Images.LeftArrow()}
+        style={styles.header}
+        onClick={() => goBack()}
+      />
+      <BottomNavigator />
     </div>
-  )
-}
+  );
+};
 
 export default Index;

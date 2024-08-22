@@ -8,14 +8,13 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 const Index = () => {
-
   const router = useRouter();
 
-  const navigate = (route : string) => {
+  const navigate = (route: string) => {
     router.push(route);
-  }
+  };
 
-    return (
+  return (
     <div className={styles.container}>
       <Header img={Images.LeftArrow()} title="Add" style={styles.header} />
       <div className={styles.addContainer}>
@@ -55,8 +54,13 @@ const Index = () => {
 
       <div className={styles.latestEntriesContainer}>
         <div className={styles.titleContainer}>
-            <h5 className={styles.title}>Latest Entries</h5>
-            <Image src={Images.More()} alt="Unable to load this image" className={styles.img} onClick={() => navigate("history")}/>
+          <h5 className={styles.title}>Latest Entries</h5>
+          <Image
+            src={Images.More()}
+            alt="Unable to load this image"
+            className={styles.img}
+            onClick={() => navigate("history")}
+          />
         </div>
       </div>
 

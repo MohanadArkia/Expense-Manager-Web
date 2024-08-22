@@ -8,12 +8,11 @@ import BottomNavigator from "@/components/BottomNavigator";
 import { useRouter } from "next/router";
 
 const Index = () => {
-
   const router = useRouter();
 
-  const navigate = (navigateTo : string) => {
+  const navigate = (navigateTo: string) => {
     router.push(navigateTo);
-  }
+  };
 
   return (
     <div className={styles.container}>
