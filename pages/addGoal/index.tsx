@@ -22,10 +22,10 @@ const Index = () => {
 
            <div className={styles.inputContainer}>
                <h5 className={styles.title}>Goal title</h5>
-               <TextInput img={Images.pencil()} style={styles.txtInput} imgStyle={styles.img}/>
+               <TextInput img={Images.Pencil()} style={styles.txtInput} imgStyle={styles.img}/>
 
                <h5 className={styles.title}>Amount</h5>
-               <TextInput img={Images.dollar()} imgStyle={styles.img} style={styles.txtInput} type='number' />
+               <TextInput img={Images.Dollar()} imgStyle={styles.img} style={styles.txtInput} type='number' />
 
                <h5 className={styles.title}>Contribution Type</h5>
                <DropDown />
