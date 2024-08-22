@@ -4,12 +4,13 @@ import Head from "next/head";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
     return (
-    <div lang="en">
+    <>
         <Head>
+            <html lang="en"/>
             <title>Expense Manager</title>
             <meta name="description" content="My app description" />
         </Head>
         <Component {...pageProps} />;
-    </div>
+    </>
     )
 }
