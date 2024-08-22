@@ -7,4 +7,5 @@ export type textInput = {
     placeHolder?: string;
     secondImg?: string;
     secondImgStyle?: string;
+    secondImgClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 };

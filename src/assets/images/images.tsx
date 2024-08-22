@@ -19,11 +19,12 @@ const Images = {
   Reminder: () => require('./icons/reminder.png'),
   Wallet: () => require('./icons/Wallet.png'),
   Calendar: () => require('./icons/calendar.png'),
-  dollar: () => require('./icons/dollarIcon.png'),
+  Dollar: () => require('./icons/dollarIcon.png'),
   More: () => require('./icons/more.png'),
-  pencil: () => require('./icons/pencil.png'),
-  hamburgerMenu: () => require('./icons/hamburgerMenu.png'),
+  Pencil: () => require('./icons/pencil.png'),
+  HamburgerMenu: () => require('./icons/hamburgerMenu.png'),
   goal: () => require('./icons/goalIcon.png'),
+  ShowPassword: () => require('./icons/visiblePassword.png'),
 };
 
 export default Images;
