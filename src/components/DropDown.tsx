@@ -16,13 +16,13 @@ const DropDown = () => {
 
   return (
     <div className={styles.dropdown}>
-      <button className={styles.dropdownButton} onClick={toggleDropdown}>{selectedItem}</button>
+      <button className={styles.dropdownButton} onClick={toggleDropdown} aria-haspopup="true" aria-expanded={isOpen}>{selectedItem}</button>
       {isOpen && (
         <div className={styles.dropdownContent}>
-          <a className={styles.dropdownItem} onClick={() => handleItemClick('Daily')}>Daily</a>
-          <a className={styles.dropdownItem} onClick={() => handleItemClick('Weekly')}>Weekly</a>
-          <a className={styles.dropdownItem} onClick={() => handleItemClick('Monthly')}>Monthly</a>
-          <a className={styles.dropdownItem} onClick={() => handleItemClick('Yearly')}>Yearly</a>
+          <a className={styles.dropdownItem} onClick={() => handleItemClick('Daily')} role="menuitem" tabIndex={0}>Daily</a>
+          <a className={styles.dropdownItem} onClick={() => handleItemClick('Weekly')}role="menuitem" tabIndex={0}>Weekly</a>
+          <a className={styles.dropdownItem} onClick={() => handleItemClick('Monthly')}role="menuitem" tabIndex={0} >Monthly</a>
+          <a className={styles.dropdownItem} onClick={() => handleItemClick('Yearly')}role="menuitem" tabIndex={0} >Yearly</a>
         </div>
       )}
     </div>

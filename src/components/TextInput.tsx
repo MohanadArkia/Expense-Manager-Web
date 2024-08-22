@@ -8,7 +8,7 @@ const TextInput = (props : textInput) => {
 
   return (
     <div className={styles.inputContainer}>
-        <input className={style} readOnly={readOnly} type={type} placeholder={placeHolder}/>
+        <input className={style} readOnly={readOnly} type={type} placeholder={placeHolder} aria-label='placeHolder'/>
         { img && <Image src={img} alt="Unable to load this image" className={imgStyle} />}
         { secondImg && <Image src={secondImg} alt="Unable to load this image" className={secondImgStyle} onClick={secondImgClick}/>}
     </div>
