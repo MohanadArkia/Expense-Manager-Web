@@ -6,7 +6,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     return (
     <>
         <Head>
-            <html lang="en"/>
             <title>Expense Manager</title>
             <meta name="description" content="My app description" />
         </Head>
