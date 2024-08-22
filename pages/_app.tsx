@@ -9,7 +9,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             <title>Expense Manager</title>
             <meta name="description" content="My app description" />
         </Head>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
     </>
     )
 }
