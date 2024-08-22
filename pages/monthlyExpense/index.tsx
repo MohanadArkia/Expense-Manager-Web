@@ -20,7 +20,7 @@ const Index = () => {
         <div className={styles.secondaryContainer}>
             <div>
                 <h5 className={styles.text}>Amount</h5>
-                <TextInput style={styles.txtInput} img={Images.dollar()} imgStyle={styles.img} />
+                <TextInput style={styles.txtInput} img={Images.Dollar()} imgStyle={styles.img} />
                 <Button title="Add Monthly Expense" style={styles.btn} />
             </div>
         </div>
