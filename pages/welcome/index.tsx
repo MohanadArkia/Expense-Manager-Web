@@ -17,7 +17,7 @@ const Index = () => {
     <div className={styles.container}>
         <div className={styles.secondaryContainer}>
             <h1 className={styles.title}>Manage your expenses fast and easy</h1>
-            <Image src={Images.Rocket()} alt="Unable to load this image" className={styles.img}/>
+            <Image src={Images.Rocket()} alt="Unable to load this image" className={styles.img} priority={true}/>
             <Button title="Let's Go" style={styles.button} buttonTextStyle={styles.buttonText} onClick={goToLogin}/>
         </div>
     </div>

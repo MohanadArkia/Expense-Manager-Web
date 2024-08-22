@@ -1,48 +1,50 @@
 .container {
-    display: flex;
-    background-image: linear-gradient(#051923, #00A6FB);
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  background-image: linear-gradient(#051923, #00a6fb);
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
-    color: #ffffff;
-    letter-spacing: 2px;
+  color: #ffffff;
+  letter-spacing: 2px;
 }
 
 .secondaryContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .button {
-    display: flex;
-    background-color: #003554;
-    width: 285px;
-    height: 71px;
-    border-radius: 35px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
+  display: flex;
+  background-color: #003554;
+  width: 285px;
+  height: 71px;
+  border-radius: 35px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
 }
 
 .button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .buttonText {
-    color: #ffffff;
-    letter-spacing: 2px;
-    font-size: 25px;
-    margin: 0;
+  color: #ffffff;
+  letter-spacing: 2px;
+  font-size: 25px;
+  margin: 0;
 }
 
 .img {
   animation: bounce 2s infinite;
+  width: 358px;
+  height: 321px;
 }
 
 @keyframes bounce {
