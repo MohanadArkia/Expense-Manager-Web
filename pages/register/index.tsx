@@ -4,7 +4,7 @@ import TextInput from "@/components/TextInput";
 import Images from "@/assets/images/images";
 import Button from "@/components/Button";
 import PopUp from "@/components/PopUp";
-import {createUser} from "../../src/utils/api";
+import { createUser } from "../../src/utils/api";
 
 const Index = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,33 +15,33 @@ const Index = () => {
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
 
   const handleOpenPopUp = () => {
-      setIsPopUpOpen(true);
+    setIsPopUpOpen(true);
   };
 
   const handleClosePopUp = () => {
-      setIsPopUpOpen(false);
+    setIsPopUpOpen(false);
   };
 
-  const handleRegister = () => {
-      try {
-        if (!userName || !email || !password) {
-            handleOpenPopUp();
-        } 
+  const handleRegister = async () => {
+    try {
+      if (!userName || !email || !password) {
+        handleOpenPopUp();
+      }
 
       const userDetails = {
-          name,
-          email,
-          password,
+        name,
+        email,
+        password,
       };
-      
-     const response = createUser(userDetails);
-     if (response.error) {
-         console.log("Failed To create a use")
-     } else {
+
+      const response = await createUser(userDetails);
+      if (response.error) {
+        console.log("Failed To create a use");
+      } else {
         console.log("Success Username have been created successfully");
-     }
-    }catch (error) {
-       console.log(error);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -62,7 +62,7 @@ const Index = () => {
           imgStyle={styles.icon}
           placeHolder="Username"
           value={userName}
-          onChange={(e : any) => setUserName(e.target.value)}
+          onChange={(e: any) => setUserName(e.target.value)}
         />
         <TextInput
           style={styles.txtInput}
@@ -70,7 +70,7 @@ const Index = () => {
           imgStyle={styles.icon}
           placeHolder="Email"
           value={email}
-          onChange={(e : any) => setEmail(e.target.value)}
+          onChange={(e: any) => setEmail(e.target.value)}
         />
         <TextInput
           style={styles.txtInput}
@@ -82,7 +82,7 @@ const Index = () => {
           secondImgStyle={styles.secondImg}
           secondImgClick={togglePasswordVisibility}
           value={password}
-          onChange={(e : any) => setPassword(e.target.value)}
+          onChange={(e: any) => setPassword(e.target.value)}
         />
         <Button
           title="Sign up"
@@ -98,7 +98,12 @@ const Index = () => {
           buttonTextStyle={styles.btnGoogleText}
         />
       </div>
-        <PopUp popUpTitle="Failed" popUpText="Please fill all of the required fields" isOpen={isPopUpOpen} onClose={handleClosePopUp} />
+      <PopUp
+        popUpTitle="Failed"
+        popUpText="Please fill all of the required fields"
+        isOpen={isPopUpOpen}
+        onClose={handleClosePopUp}
+      />
     </div>
   );
 };
