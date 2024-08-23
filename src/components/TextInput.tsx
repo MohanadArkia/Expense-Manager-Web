@@ -14,6 +14,8 @@ const TextInput = (props: textInput) => {
     secondImg,
     secondImgStyle,
     secondImgClick,
+    value,
+    onChange,
   } = props;
 
   return (
@@ -24,6 +26,8 @@ const TextInput = (props: textInput) => {
         type={type}
         placeholder={placeHolder}
         aria-label="placeHolder"
+        value={value}
+        onChange={onChange}
       />
       {img && (
         <Image src={img} alt="Unable to load this image" className={imgStyle} />

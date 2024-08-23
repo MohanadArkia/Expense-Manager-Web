@@ -3,7 +3,6 @@ import style from "../styles/bottomNav.module.css";
 import Image from "next/image";
 import Images from "@/assets/images/images";
 import { useRouter } from "next/router";
-import { warn } from "console";
 
 const BottomNavigator = () => {
   const router = useRouter();
