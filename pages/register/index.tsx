@@ -4,7 +4,7 @@ import TextInput from "@/components/TextInput";
 import Images from "@/assets/images/images";
 import Button from "@/components/Button";
 import PopUp from "@/components/PopUp";
-// import { createUser } from "../../src/utils/api";
+import { createUser } from "../../src/utils/api";
 
 const Index = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,28 +22,28 @@ const Index = () => {
     setIsPopUpOpen(false);
   };
 
-  // const handleRegister = async () => {
-  //   try {
-  //     if (!userName || !email || !password) {
-  //       handleOpenPopUp();
-  //     }
+  const handleRegister = async () => {
+    try {
+      if (!userName || !email || !password) {
+        handleOpenPopUp();
+      }
 
-  //     const userDetails = {
-  //       name,
-  //       email,
-  //       password,
-  //     };
+      const userDetails = {
+        name,
+        email,
+        password,
+      };
 
-  //     const response = await createUser(userDetails);
-  //     if (response.error) {
-  //       console.log("Failed To create a use");
-  //     } else {
-  //       console.log("Success Username have been created successfully");
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+      const response = await createUser(userDetails);
+      if (response.error) {
+        console.log("Failed To create a use");
+      } else {
+        console.log("Success Username have been created successfully");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -88,7 +88,7 @@ const Index = () => {
           title="Sign up"
           style={styles.btnSignUp}
           buttonTextStyle={styles.btnSignUpText}
-          // onClick={handleRegister}
+          onClick={handleRegister}
         />
         <h4 className={styles.text}>Or sign up with</h4>
         <Button
