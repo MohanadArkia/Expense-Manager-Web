@@ -1,5 +1,4 @@
 .container {
-  width: 100vw;
   height: 100vh;
   background-color: #212529;
 }
@@ -7,7 +6,6 @@
 .secondaryContainer {
   display: flex;
   justify-content: space-evenly;
-  width: 100vw;
 }
 
 .thirdContainer {

@@ -7,13 +7,19 @@ import { useRouter } from "next/router";
 const Index = () => {
   const navigate = useRouter();
 
-  const goToLogin = () => {
-    navigate.push("welcome");
+  const navigateTo = (route: string) => {
+    navigate.push(route);
   };
 
   useEffect(() => {
     setTimeout(() => {
-      goToLogin();
+      if (localStorage.getItem("Visited")) {
+        navigate.replace("login");
+      }
+      if (localStorage.getItem("Visited") && localStorage.getItem("LoggedIn")) {
+        navigate.replace("home");
+      }
+      navigateTo("welcome");
     }, 2000);
   });
 

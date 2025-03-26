@@ -1,7 +1,7 @@
 .container {
   background-color: #212529;
-  width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .header {
@@ -21,11 +21,14 @@
 }
 
 .txtInput {
-  border-radius: 10px;
   background-color: #051923;
-  border: 1px solid #ffffff;
+  border-radius: 10px;
+  width: 335px;
+  height: 40px;
   color: #ffffff;
-  height: 30px;
+  border: 1px solid #ffffff;
+  padding-left: 20px;
+  margin-bottom: 20px;
 }
 
 .text {
@@ -35,7 +38,7 @@
 
 .btn {
   text-align: center;
-  height: 25px;
+  height: 35px;
   background-color: #2346fa;
   color: #ffffff;
   border-radius: 35px;
@@ -47,9 +50,14 @@
   cursor: pointer;
 }
 
+.btnStyle {
+  font-size: 23px;
+}
+
 .img {
   position: absolute;
   width: 29px;
   height: 29px;
   right: 1px;
+  top: 5px;
 }

@@ -13,6 +13,7 @@ const Index = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const [isUserCreatePopUpOpen, setIsUserCreatePopUpOpen] = useState(false);
 
   const handleOpenPopUp = () => {
     setIsPopUpOpen(true);
@@ -22,23 +23,34 @@ const Index = () => {
     setIsPopUpOpen(false);
   };
 
+  const handleOpenUserCreatedPopUp = () => {
+    setIsUserCreatePopUpOpen(true);
+  };
+
+  const handleCloseUserCreatedPopUp = () => {
+    setIsUserCreatePopUpOpen(false);
+  };
+
   const handleRegister = async () => {
     try {
       if (!userName || !email || !password) {
         handleOpenPopUp();
+        return;
       }
 
       const userDetails = {
-        name,
+        name: userName,
         email,
         password,
       };
 
       const response = await createUser(userDetails);
+
       if (response.error) {
-        console.log("Failed To create a use");
+        console.log("Failed To create a user: ", response.error);
       } else {
         console.log("Success Username have been created successfully");
+        handleOpenUserCreatedPopUp();
       }
     } catch (error) {
       console.log(error);
@@ -48,7 +60,7 @@ const Index = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
     setPasswordEye(
-      showPassword ? Images.HidePassword() : Images.ShowPassword()
+      showPassword ? Images.HidePassword() : Images.ShowPassword(),
     );
   };
 
@@ -90,6 +102,7 @@ const Index = () => {
           buttonTextStyle={styles.btnSignUpText}
           onClick={handleRegister}
         />
+        {/*
         <h4 className={styles.text}>Or sign up with</h4>
         <Button
           title="Google"
@@ -97,12 +110,19 @@ const Index = () => {
           img={Images.Google()}
           buttonTextStyle={styles.btnGoogleText}
         />
+        */}
       </div>
       <PopUp
         popUpTitle="Failed"
         popUpText="Please fill all of the required fields"
         isOpen={isPopUpOpen}
         onClose={handleClosePopUp}
+      />
+      <PopUp
+        popUpTitle="Success"
+        popUpText="User created successfully, go to login"
+        isOpen={isUserCreatePopUpOpen}
+        onClose={handleCloseUserCreatedPopUp}
       />
     </div>
   );

@@ -28,8 +28,13 @@ const Index = () => {
             style={styles.txtInput}
             img={Images.Dollar()}
             imgStyle={styles.img}
+            type="number"
           />
-          <Button title="Add Monthly Expense" style={styles.btn} />
+          <Button
+            title="Add Monthly Expense"
+            style={styles.btn}
+            buttonTextStyle={styles.btnStyle}
+          />
         </div>
       </div>
     </div>

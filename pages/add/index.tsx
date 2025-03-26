@@ -34,6 +34,7 @@ const Index = () => {
           imgStyle={styles.cardImg}
           onClick={() => navigate("addExpense")}
         />
+        {/*
         <Card
           title="Add Reminder"
           img={Images.Reminder()}
@@ -50,6 +51,7 @@ const Index = () => {
           imgStyle={styles.cardImg}
           onClick={() => navigate("addGoal")}
         />
+        */}
       </div>
 
       <div className={styles.latestEntriesContainer}>
@@ -63,7 +65,6 @@ const Index = () => {
           />
         </div>
       </div>
-
       <BottomNavigator />
     </div>
   );

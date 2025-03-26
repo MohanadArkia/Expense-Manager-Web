@@ -25,6 +25,8 @@ const Images = {
   HamburgerMenu: () => require("./icons/hamburgerMenu.png"),
   goal: () => require("./icons/goalIcon.png"),
   ShowPassword: () => require("./icons/visiblePassword.png"),
+  menu: () => require("./icons/menu.png"),
+  logout: () => require("./icons/logout.png"),
 };
 
 export default Images;

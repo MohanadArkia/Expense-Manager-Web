@@ -14,12 +14,19 @@ const Index = () => {
     router.push(navigateTo);
   };
 
+  const logout = () => {
+    localStorage.removeItem("LoggedIn");
+    router.replace("login");
+  };
+
   return (
     <div className={styles.container}>
       <Header
         title="Overview"
         style={styles.header}
         headerTitleStyle={styles.headerTitle}
+        img={Images.logout()}
+        onClick={logout}
       />
       <div className={styles.secondaryContainer}>
         <Card
@@ -40,6 +47,7 @@ const Index = () => {
           textStyle={styles.priceTxt}
           imgStyle={styles.cardImg}
         />
+        {/*
         <Card
           img={Images.Wallet()}
           title="Monthly Expense"
@@ -51,6 +59,7 @@ const Index = () => {
           hover={styles.monthlyHover}
           onClick={() => navigate("monthlyExpense")}
         />
+        */}
       </div>
 
       <div className={styles.thirdContainer}>

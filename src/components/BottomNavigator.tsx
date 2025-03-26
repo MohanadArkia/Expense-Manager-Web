@@ -23,6 +23,7 @@ const BottomNavigator = () => {
           aria-label="Home"
           tabIndex={0}
         />
+        {/*
         <Image
           className={style.img}
           src={Images.Savings()}
@@ -32,8 +33,9 @@ const BottomNavigator = () => {
           aria-label="Savings"
           tabIndex={0}
         />
+        */}
         <Image
-          className={style.biggerImg}
+          className={style.img}
           src={Images.Add()}
           alt="Unable to load this image"
           onClick={() => navigate("add")}
@@ -41,6 +43,7 @@ const BottomNavigator = () => {
           aria-label="Add"
           tabIndex={0}
         />
+        {/*
         <Image
           className={style.img}
           src={Images.Notification()}
@@ -50,6 +53,7 @@ const BottomNavigator = () => {
           aria-label="Notifications"
           tabIndex={0}
         />
+        
         <Image
           className={style.img}
           src={Images.Reminder()}
@@ -59,6 +63,7 @@ const BottomNavigator = () => {
           aria-label="Reminders"
           tabIndex={0}
         />
+        */}
       </div>
     </div>
   );

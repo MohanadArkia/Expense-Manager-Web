@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../../src/styles/welcome.module.css";
 import Image from "next/image";
 import Images from "@/assets/images/images";
@@ -10,6 +10,7 @@ const Index = () => {
 
   const goToLogin = () => {
     navigate.push("login");
+    localStorage.setItem("Visited", "Yes");
   };
 
   return (
