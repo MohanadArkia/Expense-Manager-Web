@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "../styles/textInput.module.css";
 import Image from "next/image";
-import { textInput } from "../../types/textInput.type";
+import { TextInputProps } from "../../types/textInput.type";
 
-const TextInput = (props: textInput) => {
+const TextInput = (props: TextInputProps) => {
   const {
     img,
     imgStyle,

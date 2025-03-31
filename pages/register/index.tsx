@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../../src/styles/register.module.css";
 import TextInput from "@/components/TextInput";
 import Images from "@/assets/images/images";
 import Button from "@/components/Button";
 import PopUp from "@/components/PopUp";
-import { createUser } from "../../src/utils/api";
+import { CreateUser } from "../../src/utils/api";
+import Loading from "@/components/Loading";
+import { useRouter } from "next/router";
 
 const Index = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,6 +16,16 @@ const Index = () => {
   const [password, setPassword] = useState("");
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const [isUserCreatePopUpOpen, setIsUserCreatePopUpOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [shouldNavigateBack, setShouldNavigateBack] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (shouldNavigateBack) {
+      router.back();
+    }
+  }, [shouldNavigateBack, router]);
 
   const handleOpenPopUp = () => {
     setIsPopUpOpen(true);
@@ -29,22 +41,24 @@ const Index = () => {
 
   const handleCloseUserCreatedPopUp = () => {
     setIsUserCreatePopUpOpen(false);
+    setShouldNavigateBack(true);
   };
 
   const handleRegister = async () => {
+    if (!userName || !email || !password) {
+      handleOpenPopUp();
+      return;
+    }
     try {
-      if (!userName || !email || !password) {
-        handleOpenPopUp();
-        return;
-      }
-
+      setLoading(true);
       const userDetails = {
         name: userName,
         email,
         password,
       };
 
-      const response = await createUser(userDetails);
+      const response = await CreateUser(userDetails);
+      setLoading(false);
 
       if (response.error) {
         console.log("Failed To create a user: ", response.error);
@@ -53,9 +67,18 @@ const Index = () => {
         handleOpenUserCreatedPopUp();
       }
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
   };
+
+  const goBack = () => {
+    router.back();
+  };
+
+  if (loading) {
+    return <Loading />;
+  }
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);

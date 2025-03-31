@@ -1,61 +1,61 @@
 const baseURL = "https://expensemanager-server.onrender.com";
 
-export const createAddIncome = async (transaction) => {
+export const CreateAddIncome = async (transaction) => {
   const url = "/createAddIncome";
   return await fetchApi(url, "POST", transaction);
 };
 
-export const createAddExpense = async (transaction) => {
+export const CreateAddExpense = async (transaction) => {
   const url = "/createAddExpense";
   return await fetchApi(url, "POST", transaction);
 };
 
-export const getAllIncomes = async () => {
+export const GetAllIncomes = async () => {
   const url = `/getAllIncomes`;
   return await fetchApi(url);
 };
 
-export const getAllExpenses = async () => {
+export const GetAllExpenses = async () => {
   const url = `/getAllExpenses`;
   return await fetchApi(url);
 };
 
-export const getMonthlyExpense = async () => {
+export const GetMonthlyExpense = async () => {
   const url = "/getMonthlyExpense";
   return await fetchApi(url);
 };
 
-export const createMonthlyExpense = async (transaction) => {
+export const CreateMonthlyExpense = async (transaction) => {
   const url = "/createMonthlyExpense";
   return await fetchApi(url, "POST", transaction);
 };
 
-export const createReminder = async (transaction) => {
+export const CreateReminder = async (transaction) => {
   const url = "/createReminder";
   return await fetchApi(url, "POST", transaction);
 };
 
-export const getReminders = async () => {
+export const GetReminders = async () => {
   const url = "/getReminders";
   return await fetchApi(url);
 };
 
-export const createUser = async (userDetails) => {
+export const CreateUser = async (userDetails) => {
   const url = "/createUser";
   return await fetchApi(url, "POST", userDetails);
 };
 
-export const login = async (userDetails) => {
+export const Login = async (userDetails) => {
   const url = "/login";
   return await fetchApi(url, "POST", userDetails);
 };
 
-export const createGoal = async (goalDetails) => {
+export const CreateGoal = async (goalDetails) => {
   const url = "/createGoal";
   return await fetchApi(url, "POST", goalDetails);
 };
 
-export const getAllGoals = async () => {
+export const GetAllGoals = async () => {
   const url = "/getAllGoals";
   return await fetchApi(url);
 };

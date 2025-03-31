@@ -9,11 +9,12 @@
 }
 
 .thirdContainer {
-  height: 100vh;
   background-color: #051923;
   margin-top: 50px;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
+  padding-bottom: 50px;
+  height: auto;
 }
 
 .title {

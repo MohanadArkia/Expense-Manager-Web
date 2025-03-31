@@ -4,7 +4,7 @@ import Image from "next/image";
 import Images from "@/assets/images/images";
 import Button from "@/components/Button";
 
-const index = () => {
+const Index = () => {
   return (
     <div className={styles.container}>
       <div className={styles.secondaryContainer}>
@@ -20,4 +20,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

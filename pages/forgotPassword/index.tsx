@@ -5,7 +5,7 @@ import Images from "@/assets/images/images";
 import TextInput from "@/components/TextInput";
 import Button from "@/components/Button";
 
-const index = () => {
+const Index = () => {
   return (
     <div className={styles.container}>
       <div className={styles.secondaryContainer}>
@@ -30,4 +30,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "../../src/styles/index.module.css";
 import Card from "@/components/Card";
 import Images from "@/assets/images/images";
@@ -6,9 +6,59 @@ import Header from "@/components/Header";
 import Image from "next/image";
 import BottomNavigator from "@/components/BottomNavigator";
 import { useRouter } from "next/router";
+import MyContext from "@/store/MyContext";
+import RenderTransactions from "@/utils/renderTransactions";
 
 const Index = () => {
   const router = useRouter();
+  const { totalSalary, setTotalSalary } = useContext(MyContext);
+  const { transactions, getAllTransactionsFromAPI, displayTransactions } =
+    RenderTransactions();
+  const [totalExpense, setTotalExpense] = useState(0);
+
+  useEffect(() => {
+    calculateTotalSalary();
+    calculateTotalExpense();
+    getAllTransactionsFromAPI();
+  }, [totalSalary, totalExpense, transactions]);
+
+  const calculateTotalSalary = async () => {
+    try {
+      const incomeTransactions = transactions;
+
+      const incomes = incomeTransactions.filter(
+        (incomes) => incomes.incomeAmount,
+      );
+
+      let totalIncome = 0;
+      incomes.forEach((income) => {
+        totalIncome += income.incomeAmount;
+      });
+
+      setTotalSalary(totalIncome - totalExpense);
+    } catch (error) {
+      console.error("Error calculating total salary:", error);
+    }
+  };
+
+  const calculateTotalExpense = async () => {
+    try {
+      const expenseTransactions = transactions;
+
+      const expenses = expenseTransactions.filter(
+        (expenses) => expenses.expenseAmount,
+      );
+
+      let totalExpense = 0;
+      expenses.forEach((expense) => {
+        totalExpense += expense.expenseAmount;
+      });
+
+      setTotalExpense(totalExpense);
+    } catch (error) {
+      console.error("Error calculating total salary:", error);
+    }
+  };
 
   const navigate = (navigateTo: string) => {
     router.push(navigateTo);
@@ -16,6 +66,7 @@ const Index = () => {
 
   const logout = () => {
     localStorage.removeItem("LoggedIn");
+    localStorage.removeItem("UserId");
     router.replace("login");
   };
 
@@ -32,7 +83,7 @@ const Index = () => {
         <Card
           img={Images.Wallet()}
           title="Total Salary"
-          price={0}
+          price={totalSalary || 0}
           style={styles.card}
           titleStyle={styles.title}
           textStyle={styles.priceTxt}
@@ -41,7 +92,7 @@ const Index = () => {
         <Card
           img={Images.Wallet()}
           title="Total Expense"
-          price={0}
+          price={totalExpense || 0}
           style={styles.card}
           titleStyle={styles.title}
           textStyle={styles.priceTxt}
@@ -72,6 +123,7 @@ const Index = () => {
             onClick={() => navigate("history")}
           />
         </div>
+        {displayTransactions()}
       </div>
       <BottomNavigator />
     </div>

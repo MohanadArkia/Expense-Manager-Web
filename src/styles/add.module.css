@@ -45,11 +45,13 @@
 }
 
 .latestEntriesContainer {
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #051923;
   margin-top: 5%;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
+  height: auto;
+  padding-bottom: 50px;
 }
 
 .titleContainer {

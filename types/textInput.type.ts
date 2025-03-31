@@ -1,4 +1,4 @@
-export type textInput = {
+export type TextInputProps = {
     img?: string;
     imgStyle?: string;
     style?: string;

@@ -1,8 +1,8 @@
 import React from "react";
-import { button } from "../../types/button.type";
 import Image from "next/image";
+import { ButtonProps } from "../../types/button.type";
 
-const Button = (props: button) => {
+const Button = (props: ButtonProps) => {
   const { title, style, buttonTextStyle, onClick, img, imgStyle } = props;
   return (
     <div className={style} onClick={onClick} role="button" aria-label="title">

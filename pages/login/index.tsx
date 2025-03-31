@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "../../src/styles/login.module.css";
 import Image from "next/image";
 import Images from "@/assets/images/images";
@@ -6,8 +6,9 @@ import TextInput from "@/components/TextInput";
 import Button from "@/components/Button";
 import { useRouter } from "next/router";
 import PopUp from "@/components/PopUp";
-import { login } from "@/utils/api";
+import { Login } from "@/utils/api";
 import Loading from "@/components/Loading";
+import MyContext from "@/store/MyContext";
 
 const Index = () => {
   const navigate = useRouter();
@@ -16,6 +17,7 @@ const Index = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [incorrectCredentials, setIncorrectCredentials] = useState(false);
+  const { setUser } = useContext(MyContext);
 
   const handleOpenPopUp = () => {
     setIsPopUpOpen(true);
@@ -50,14 +52,16 @@ const Index = () => {
         password,
       };
 
-      const response = await login(loginDetails);
+      const response = await Login(loginDetails);
       setLoading(false);
       if (response.error) {
         console.log("Error: ", response.error);
         handleOpenIncorrectCredentialsPopUp();
       } else {
-        console.log("Logged in successfully");
+        const userId = response.user._id;
         localStorage.setItem("LoggedIn", "Yes");
+        localStorage.setItem("UserId", userId);
+        setUser(userId);
         navigateTo("home");
       }
     } catch (error) {
@@ -73,7 +77,11 @@ const Index = () => {
   return (
     <div className={styles.container}>
       <div className={styles.secondaryContainer}>
-        <Image src={Images.Logo()} alt="Unable to load this image" />
+        <Image
+          src={Images.Logo()}
+          alt="Unable to load this image"
+          priority={true}
+        />
         <h1 className={styles.text}>E Manager</h1>
         <TextInput
           style={styles.txtInput}

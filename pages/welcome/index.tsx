@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../../src/styles/welcome.module.css";
 import Image from "next/image";
 import Images from "@/assets/images/images";

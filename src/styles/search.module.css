@@ -1,0 +1,19 @@
+.searchInput {
+    height: 40;
+    border-color: #ffffff;
+    border-width: 1;
+    margin: 0px 10px 0px 10px;
+    border-radius: 5;
+    background-color: #051923;
+    margin-top: 20;
+    margin: 10px 0px 10px 0px;
+    color: #ffffff;
+    font-size: 17;
+} 
+
+.serachContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../../src/styles/add.module.css";
 import BottomNavigator from "@/components/BottomNavigator";
 import Images from "@/assets/images/images";
@@ -6,9 +6,16 @@ import Header from "@/components/Header";
 import Card from "@/components/Card";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import RenderTransactions from "@/utils/renderTransactions";
 
 const Index = () => {
   const router = useRouter();
+  const { transactions, getAllTransactionsFromAPI, displayTransactions } =
+    RenderTransactions();
+
+  useEffect(() => {
+    getAllTransactionsFromAPI();
+  }, [transactions]);
 
   const navigate = (route: string) => {
     router.push(route);
@@ -16,7 +23,12 @@ const Index = () => {
 
   return (
     <div className={styles.container}>
-      <Header img={Images.LeftArrow()} title="Add" style={styles.header} />
+      <Header
+        img={Images.LeftArrow()}
+        title="Add"
+        style={styles.header}
+        onClick={router.back}
+      />
       <div className={styles.addContainer}>
         <Card
           title="Add Income"
@@ -64,6 +76,7 @@ const Index = () => {
             onClick={() => navigate("history")}
           />
         </div>
+        {displayTransactions()}
       </div>
       <BottomNavigator />
     </div>

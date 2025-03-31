@@ -25,7 +25,11 @@ const Index = () => {
 
   return (
     <div className={styles.container}>
-      <Image src={Images.Logo()} alt="Unable to load this image" />
+      <Image
+        src={Images.Logo()}
+        alt="Unable to load this image"
+        priority={true}
+      />
     </div>
   );
 };

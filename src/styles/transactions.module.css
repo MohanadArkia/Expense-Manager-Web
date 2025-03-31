@@ -1,0 +1,14 @@
+.transactionContainer {
+    margin-left: 15px;
+}
+
+.noTransactions {
+    font-size: 10px;
+    color: #ffffff;
+    margin-left: 15px;
+}
+
+.txt {
+    color: #ffffff;
+    font-size: 20px;
+}
