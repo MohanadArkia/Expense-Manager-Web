@@ -17,6 +17,8 @@ const Index = () => {
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const [isUserCreatePopUpOpen, setIsUserCreatePopUpOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isEmailExistsPopUp, setIsEmailExistsPopUp] = useState(false);
+  const [invalidEmailPopUp, setInvalidEmailPopUp] = useState(false);
 
   const [shouldNavigateBack, setShouldNavigateBack] = useState(false);
   const router = useRouter();
@@ -44,11 +46,35 @@ const Index = () => {
     setShouldNavigateBack(true);
   };
 
+  const handleOpenEmailExistsPopUp = () => {
+    setIsEmailExistsPopUp(true);
+  };
+
+  const handleCloseEmailExistsPopUp = () => {
+    setIsEmailExistsPopUp(false);
+  };
+
+  const handleOpenInvalidEmailPopUp = () => {
+    setInvalidEmailPopUp(true);
+  };
+
+  const handleCloseInvalidEmailPopUp = () => {
+    setInvalidEmailPopUp(false);
+  };
+
   const handleRegister = async () => {
     if (!userName || !email || !password) {
       handleOpenPopUp();
       return;
     }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      handleOpenInvalidEmailPopUp();
+      return;
+    }
+
     try {
       setLoading(true);
       const userDetails = {
@@ -59,9 +85,10 @@ const Index = () => {
 
       const response = await CreateUser(userDetails);
       setLoading(false);
-
       if (response.error) {
-        console.log("Failed To create a user: ", response.error);
+        if (response.message.code == 11000) {
+          handleOpenEmailExistsPopUp();
+        }
       } else {
         console.log("Success Username have been created successfully");
         handleOpenUserCreatedPopUp();
@@ -70,10 +97,6 @@ const Index = () => {
       setLoading(false);
       console.log(error);
     }
-  };
-
-  const goBack = () => {
-    router.back();
   };
 
   if (loading) {
@@ -141,10 +164,25 @@ const Index = () => {
         isOpen={isPopUpOpen}
         onClose={handleClosePopUp}
       />
+
+      <PopUp
+        popUpTitle="Failed"
+        popUpText="Email already exists"
+        isOpen={isEmailExistsPopUp}
+        onClose={handleCloseEmailExistsPopUp}
+      />
+
       <PopUp
         popUpTitle="Success"
         popUpText="User created successfully, go to login"
         isOpen={isUserCreatePopUpOpen}
+        onClose={handleCloseUserCreatedPopUp}
+      />
+
+      <PopUp
+        popUpTitle="Failed"
+        popUpText="Invalid email"
+        isOpen={invalidEmailPopUp}
         onClose={handleCloseUserCreatedPopUp}
       />
     </div>

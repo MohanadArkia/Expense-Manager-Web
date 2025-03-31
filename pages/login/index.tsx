@@ -53,6 +53,7 @@ const Index = () => {
       };
 
       const response = await Login(loginDetails);
+
       setLoading(false);
       if (response.error) {
         console.log("Error: ", response.error);
