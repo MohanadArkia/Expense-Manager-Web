@@ -107,12 +107,15 @@ const Index = () => {
           buttonTextStyle={styles.btnLoginText}
           onClick={handleLogin}
         />
+        {/*
         <h5
           onClick={() => navigateTo("forgotPassword")}
           className={styles.forgotPass}
         >
           Forgot Password?
         </h5>
+        */}
+
         {/*
         <Button
           title="Continue with Google"
